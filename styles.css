@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Sedgwick+Ave+Display&display=swap');
+
+@font-face {
+  font-family: 'Streetbomber';
+  src: url('./public/Streetbomber.ttf') format('truetype');
+}
+
+/* General Resets and Styling */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Sedgwick Ave Display", cursive;
+    line-height: 1.6;
+    color: #4A4A4A; /* Cool Gray for main text */
+    background-color: #1A1A1A; /* Charcoal Black for overall page background */
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+/* Responsive Layout */
+.page-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header, section, .main, aside, footer {
+    margin-bottom: 30px;
+}
+
+/* Header Styling */
+header {
+    font-family: "Streetbomber";
+    align-content: center;
+    text-align: center;
+    background-image: url("./images/AlleyGraffiti.webp");
+    height: 50vh;
+    padding: 20px;
+    border-radius: 5px;
+    color: #FFFFFF; /* White text color */
+    background-size: cover;
+    background-position: center;
+    font-size: 2rem;
+}
+
+/* Content Sections */
+.intro, .explanation, .participation, .benefits, .requirements {
+    padding: 20px;
+    background-color: #4A4A4A; /* Cool Gray for sections */
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    color: #FFFFFF; /* White text for better contrast */
+}
+
+/* Typography and Text Styles */
+h1, h2, h3 {
+    color: #FF7E00; /* Electric Blue for main headers */
+}
+
+h1 {
+    font-size: 2.5em;
+    text-align: center;
+}
+
+h2 {
+    font-size: 1.8em;
+    color: #FF7E00; /* Bright Orange for sub-headers */
+}
+
+h3 {
+    font-size: 1.6em;
+    color: #FF7E00; /* Bright Orange for sub-headers */
+}
+
+/* Link Styling */
+a {
+    color: #FF4971; /* Neon Pink for links */
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #A8E800; /* Yellow Green on hover */
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #4A4A4A; /* Cool Gray for footer background */
+    color: #FFFFFF; /* White text for footer */
+    font-size: 0.9em;
+    border-top: 1px solid #ccc;
+}
+
+footer a {
+    color: #FFFFFF; /* White for footer links */
+    text-decoration: underline;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    padding: 20px;
+    background-color: #1A1A1A; /* Charcoal Black for sidebar */
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.design-selection {
+    margin-bottom: 20px;
+}
+
+.design-selection h3, .design-selection ul {
+    margin-bottom: 15px;
+}
+
+.design-selection ul {
+    list-style: none;
+}
+
+.design-selection li {
+    margin: 5px 0;
+}
+
+.design-selection .design-name {
+    font-weight: bold;
+    color: #A8E800; /* Yellow Green for design names */
+}
+
+@media (min-width: 768px) {
+    /* Define the grid layout for larger screens */
+    .page-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 3fr; /* Sidebar and main content ratio */
+        gap: 20px;
+        grid-template-areas:
+            "intro intro"    /* .intro spans the full width at the top */
+            "sidebar main";  /* Sidebar and main content below .intro */
+    }
+
+    .intro {
+        grid-area: intro;      /* Assign .intro to the top grid area */
+        grid-column: 1 / -1;   /* Span the full width of the grid */
+        background-color: #4A4A4A; /* Cool Gray */
+        color: #FFFFFF; /* White text for better visibility */
+        margin-bottom: 20px;   /* Add spacing below the intro */
+    }
+
+    .sidebar {
+        grid-area: sidebar;    /* Position sidebar in the left column */
+    }
+
+    .main {
+        grid-area: main;       /* Position main content in the right column */
+        background-color: #1A1A1A; /* Charcoal Black for main content */
+        color: #FFFFFF; /* White text for main content */
+    }
+}
